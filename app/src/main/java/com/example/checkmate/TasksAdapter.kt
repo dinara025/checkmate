@@ -18,6 +18,7 @@ class TasksAdapter(private var tasks:List<Task>,context:Context): RecyclerView.A
     class TaskViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val titleTextView:TextView = itemView.findViewById(R.id.titleTextView)
         val contentTextView: TextView=itemView.findViewById(R.id.contentTextView)
+        val deadlineTextView: TextView=itemView.findViewById(R.id.deadlineTextView)
         val updateButton: ImageView=itemView.findViewById(R.id.updateButton)
         val deleteButton: ImageView=itemView.findViewById(R.id.deleteButton)
 
@@ -34,6 +35,7 @@ class TasksAdapter(private var tasks:List<Task>,context:Context): RecyclerView.A
         val task = tasks[position]
         holder.titleTextView.text=task.title
         holder.contentTextView.text =task.content
+        holder.deadlineTextView.text =task.deadline
 
         holder.updateButton.setOnClickListener{
             val intent = Intent(holder.itemView.context, UpdateTaskActivity::class.java).apply{
@@ -44,7 +46,7 @@ class TasksAdapter(private var tasks:List<Task>,context:Context): RecyclerView.A
         holder.deleteButton.setOnClickListener{
             db.deleteTask(task.id)
             refreshData(db.getAllTasks())
-            Toast.makeText(holder.itemView.context,"Note Deleted",Toast.LENGTH_SHORT).show()
+            Toast.makeText(holder.itemView.context,"Task Deleted",Toast.LENGTH_SHORT).show()
         }
     }
 

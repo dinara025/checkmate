@@ -52,6 +52,18 @@
         android:layout_below="@id/titleEditText"
         android:layout_marginTop="120dp"/>
 
-
-
+    <EditText
+        android:id="@+id/deadlineEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Select Deadline"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_below="@id/contentEditText"
+        android:background="@drawable/orange_border"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"
+        android:fontFamily="@font/poppins"
+        android:focusable="false"
+        android:onClick="showDatePickerDialog" />
 </RelativeLayout>

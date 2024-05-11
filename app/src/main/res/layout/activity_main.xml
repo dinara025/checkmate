@@ -5,38 +5,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/pastalbackground">
 
     <TextView
         android:id="@+id/tasksHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins"
-        android:text="Tasks."
         android:layout_marginStart="18dp"
-        android:textColor="@color/orange"
-        android:textSize="24sp"/>
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/playfair_display_black"
+        android:text="Tasks."
+        android:textColor="@color/darkred"
+        android:textSize="28sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasksRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:padding="16dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/deeporange"
         android:src="@drawable/baseline_add_24"
-        android:tint="@color/white"
-        android:backgroundTint="@color/orange"/>
+        android:tint="@color/white" />
     </RelativeLayout>

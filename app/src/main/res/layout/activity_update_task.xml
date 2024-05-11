@@ -52,6 +52,19 @@
         android:layout_below="@id/updateTitleEditText"
         android:layout_marginTop="120dp"/>
 
+    <EditText
+        android:id="@+id/updateDeadlineEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Enter the Deadline"
+        android:gravity="top"
+        android:padding="12dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins"
+        android:background="@drawable/orange_border"
+        android:layout_below="@id/updateContentEditText"
+        android:layout_marginTop="120dp"/>
+
 
 
 </RelativeLayout>

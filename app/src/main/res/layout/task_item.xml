@@ -24,11 +24,11 @@
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/playfair_display_black"
                 android:text="Title"
-                android:fontFamily="@font/poppins"
                 android:textColor="@color/orange"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/updateButton"
@@ -56,6 +56,15 @@
         android:fontFamily="@font/poppins"
         android:maxLines="3"
         android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/deadlineTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deadline"
+            android:fontFamily="@font/poppins"
+            android:maxLines="3"
+            android:layout_marginTop="40dp"/>
 
     </LinearLayout>
 

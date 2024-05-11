@@ -7,16 +7,17 @@ import com.example.checkmate.Task
 class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_NAME = "checkmateapp.db"
+        private const val DATABASE_NAME = "checkmate.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "alltasks"
         private const val COLUMN_ID = "id"
         private const val COLUMN_TITLE = "title"
         private const val COLUMN_CONTENT = "content"
+        private const val COLUMN_DEADLINE ="deadline"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        val createTableQuery = "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TITLE TEXT, $COLUMN_CONTENT TEXT)"
+        val createTableQuery = "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TITLE TEXT, $COLUMN_CONTENT TEXT, $COLUMN_DEADLINE TEXT)"
         db.execSQL(createTableQuery)
     }
 
@@ -31,6 +32,7 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
             val values = ContentValues().apply {
                 put(COLUMN_TITLE, task.title)
                 put(COLUMN_CONTENT, task.content)
+                put(COLUMN_DEADLINE, task.deadline)
             }
             db.insert(TABLE_NAME, null, values)
         }
@@ -45,7 +47,8 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
                 val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
                 val title = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
                 val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
-                val task = Task(id, title, content)
+                val deadline = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DEADLINE))
+                val task = Task(id, title, content,deadline)
                 tasksList.add(task)
             }
             cursor.close()
@@ -58,6 +61,7 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
             val values = ContentValues().apply {
                 put(COLUMN_TITLE, task.title)
                 put(COLUMN_CONTENT, task.content)
+                put(COLUMN_DEADLINE, task.deadline)
             }
             val whereClause = "$COLUMN_ID = ?"
             val whereArgs = arrayOf(task.id.toString())
@@ -74,7 +78,8 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
                     val id = it.getInt(it.getColumnIndexOrThrow(COLUMN_ID))
                     val title = it.getString(it.getColumnIndexOrThrow(COLUMN_TITLE))
                     val content = it.getString(it.getColumnIndexOrThrow(COLUMN_CONTENT))
-                    return Task(id, title, content)
+                    val deadline = it.getString(it.getColumnIndexOrThrow(COLUMN_DEADLINE))
+                    return Task(id, title, content,deadline)
                 }
             }
         }
