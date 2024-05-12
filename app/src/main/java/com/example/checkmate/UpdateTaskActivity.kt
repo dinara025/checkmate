@@ -34,7 +34,7 @@ class UpdateTaskActivity : AppCompatActivity() {
             binding.updateSaveButton.setOnClickListener {
                 val newTitle = binding.updateTitleEditText.text.toString()
                 val newContent = binding.updateContentEditText.text.toString()
-                val newDeadline = binding.updateContentEditText.text.toString()
+                val newDeadline = binding.updateDeadlineEditText.text.toString()
                 val updatedTask = Task(taskId, newTitle, newContent,newDeadline)
                 db.updateTask(updatedTask)
                 finish()

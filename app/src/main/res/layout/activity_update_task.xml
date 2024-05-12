@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateTaskActivity">
+    tools:context=".UpdateTaskActivity"
+    android:background="@drawable/pastalbackground">
 
     <TextView
         android:id="@+id/editTaskHeading"
@@ -30,11 +31,14 @@
         android:id="@+id/updateTitleEditText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:hint="Enter the title"
         android:padding="12dp"
         android:textSize="20sp"
         android:layout_below="@id/editTaskHeading"
         android:background="@drawable/orange_border"
+        android:backgroundTint="@color/white"
         android:layout_marginTop="16dp"
         android:maxLines="1"
         android:fontFamily="@font/poppins"/>
@@ -42,21 +46,27 @@
     <EditText
         android:id="@+id/updateContentEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:hint="Enter the Description"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:gravity="top"
         android:padding="12dp"
         android:textSize="18dp"
+        android:backgroundTint="@color/white"
         android:fontFamily="@font/poppins"
         android:background="@drawable/orange_border"
         android:layout_below="@id/updateTitleEditText"
-        android:layout_marginTop="120dp"/>
+        android:layout_marginTop="24sp"/>
 
     <EditText
         android:id="@+id/updateDeadlineEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="Enter the Deadline"
+        android:backgroundTint="@color/white"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Select Deadline"
         android:gravity="top"
         android:padding="12dp"
         android:textSize="18dp"

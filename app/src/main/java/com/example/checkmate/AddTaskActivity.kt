@@ -24,6 +24,7 @@ class AddTaskActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db= TasksDatabaseHelper(this)
+        deadlineEditText = binding.deadlineEditText
 
         binding.saveButton.setOnClickListener{
             val title=binding.titleEditText.text.toString()
