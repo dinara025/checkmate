@@ -35,7 +35,6 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
             put(COLUMN_DEADLINE, task.deadline)
         }
         db.insert(TABLE_NAME, null, values)
-        db.close()
     }
 
     fun getAllTasks(): List<Task> {
@@ -66,9 +65,7 @@ class TasksDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
         val whereClause = "$COLUMN_ID = ?"
         val whereArgs = arrayOf(task.id.toString())
         db.update(TABLE_NAME, values, whereClause, whereArgs)
-        db.close()
     }
-
 
     fun getTaskByID(taskId: Int): Task? {
         val db = readableDatabase

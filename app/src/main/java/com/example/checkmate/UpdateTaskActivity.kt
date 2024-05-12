@@ -19,7 +19,7 @@ class UpdateTaskActivity : AppCompatActivity() {
 
         db = TasksDatabaseHelper(this)
 
-        taskId = intent.getIntExtra("note_id", -1)
+        taskId = intent.getIntExtra("task_id", -1)
         if (taskId == -1) {
             finish()
             return
@@ -29,7 +29,7 @@ class UpdateTaskActivity : AppCompatActivity() {
         if (task != null) {
             binding.updateTitleEditText.setText(task.title)
             binding.updateContentEditText.setText(task.content)
-            binding.updateDeadlineEditText.setText(task.content)
+            binding.updateDeadlineEditText.setText(task.deadline)
 
             binding.updateSaveButton.setOnClickListener {
                 val newTitle = binding.updateTitleEditText.text.toString()
